@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BSIT CYBERWARRIOR WEBSITE</title>
+  <!-- Google Fonts & FontAwesome Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- FLOATING BACKGROUND ANIMATION ELEMENTS -->
+  <div class="floating-bg-container">
+    <div class="float-item code-item">&lt;/&gt;</div>
+    <div class="float-item trophy-item"><i class="fa-solid fa-trophy"></i></div>
+    <div class="float-item code-item">const code = "BSIT";</div>
+    <div class="float-item sport-item"><i class="fa-solid fa-basketball"></i></div>
+    <div class="float-item code-item">function tryout() {}</div>
+    <div class="float-item trophy-item"><i class="fa-solid fa-medal"></i></div>
+    <div class="float-item sport-item"><i class="fa-solid fa-volleyball"></i></div>
+    <div class="float-item code-item">&lt;div&gt;Tryout&lt;/div&gt;</div>
+    <div class="float-item trophy-item"><i class="fa-solid fa-award"></i></div>
+    <div class="float-item sport-item"><i class="fa-solid fa-person-running"></i></div>
+  </div>
+
+  <!-- TOP HEADER -->
+  <header class="top-header">
+    <div class="brand-container">
+      <div class="logo-circle">
+        <img src="image/379918482_327557649781022_3615444280239187766_n.jpg" alt="Logo" class="changeable-logo" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80'">
+      </div>
+      <div class="brand-text">
+        <h1>BSIT CYBERWARRIOR WEBSITE</h1>
+        <span>BACHELOR OF SCIENCE IN INFORMATION TECHNOLOGY</span>
+      </div>
+    </div>
+    
+    <div class="header-right">
+      <button class="profile-avatar-btn hidden" id="profileBtn" onclick="openProfileModal()" title="View Profile">
+        <img id="headerAvatarImg" src="image/379918482_327557649781022_3615444280239187766_n.jpg" alt="Profile" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80'">
+      </button>
+
+      <button class="hamburger-btn" id="hamburgerBtn" onclick="toggleSidebar()" aria-label="Toggle Navigation Menu">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </button>
+    </div>
+  </header>
+
+  <!-- OVERLAY & SIDEBAR NAVIGATION -->
+  <div class="sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()"></div>
+  
+  <nav class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <div class="logo-circle">
+        <img src="image/379918482_327557649781022_3615444280239187766_n.jpg" alt="Logo" class="changeable-logo" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80'">
+      </div>
+      <h3>CYBERWARRIOR</h3>
+      <button class="close-sidebar-btn" onclick="closeSidebar()">&times;</button>
+    </div>
+    
+    <ul class="nav-links">
+      <li><a href="#" onclick="navigateTo('homeSection')"><i class="fa-solid fa-house"></i> HOME</a></li>
+      <li><a href="#" onclick="navigateTo('sportsSection')"><i class="fa-solid fa-trophy"></i> SPORTS & EVENT</a></li>
+      <li><a href="#" onclick="navigateTo('facilitatorSection')"><i class="fa-solid fa-user-tie"></i> FACILITATOR</a></li>
+      <li><a href="#" onclick="navigateTo('staffChatSection')"><i class="fa-solid fa-comments"></i> STAFF CHAT (ADMIN & FACILITATORS)</a></li>
+      <li><a href="#" onclick="navigateTo('aboutSection')"><i class="fa-solid fa-circle-info"></i> ABOUT US</a></li>
+      <li><a href="#" onclick="navigateTo('faqSection')"><i class="fa-solid fa-circle-question"></i> FAQ</a></li>
+      <li><a href="#" onclick="navigateTo('loginSection')"><i class="fa-solid fa-right-to-bracket"></i> LOGIN</a></li>
+    </ul>
+    
+    <div class="sidebar-footer">
+      <p>&copy; BSIT Intramurals Committee</p>
+    </div>
+  </nav>
+
+  <!-- MAIN CONTAINER -->
+  <main class="main-container">
+
+    <!-- 1. HOME SECTION -->
+    <section id="homeSection" class="view-section active">
+      <div class="hero-banner">
+        <h2>UNLEASH YOUR POTENTIAL IN INTRAMURALS</h2>
+        <p>Represent the Information Technology department with pride, passion, and sportsmanship. Join the try-outs today!</p>
+        <button class="cta-btn" onclick="navigateTo('sportsSection')">EXPLORE EVENTS & REGISTER <i class="fa-solid fa-arrow-right"></i></button>
+      </div>
+
+      <div class="section-title">
+        <h3><i class="fa-solid fa-bullhorn"></i> OFFICIAL PUBLISHED ANNOUNCEMENTS</h3>
+      </div>
+      <div class="marquee-container-vertical">
+        <div class="marquee-content-vertical" id="publishedMarqueeBox"></div>
+      </div>
+
+      <div class="section-title" style="margin-top: 2.5rem;">
+        <h3><i class="fa-solid fa-star"></i> BSIT CYBERWARRIOR WEBSITE FEATURES</h3>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <img src="image/379918482_327557649781022_3615444280239187766_n.jpg" alt="Icon" class="changeable-logo" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80'">
+          </div>
+          <h4>Instant Try-out Registration</h4>
+          <p>Register effortlessly for any of our official sporting and academic events with real-time field validation.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <img src="image/379918482_327557649781022_3615444280239187766_n.jpg" alt="Icon" class="changeable-logo" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80'">
+          </div>
+          <h4>Interactive Group Chat</h4>
+          <p>Connect instantly with your co-athletes and event facilitators in real-time dedicated Messenger-style group chats per discipline.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <img src="image/379918482_327557649781022_3615444280239187766_n.jpg" alt="Icon" class="changeable-logo" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80'">
+          </div>
+          <h4>Facilitator Portal</h4>
+          <p>Dedicated management dashboards allowing designated sports coordinators to review rosters and update player statuses.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <img src="image/379918482_327557649781022_3615444280239187766_n.jpg" alt="Icon" class="changeable-logo" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80'">
+          </div>
+          <h4>Custom Athlete Profiles</h4>
+          <p>Personalize your athlete profile with custom avatars and maintain your academic details and contact info in one secure dashboard.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. SPORTS & EVENT SECTION -->
+    <section id="sportsSection" class="view-section">
+      <div class="section-title">
+        <h3><i class="fa-solid fa-trophy"></i> CHOOSE YOUR EVENT TO REGISTER</h3>
+        <p>Select an event below to proceed directly to the official try-out registration form.</p>
+      </div>
+
+      <div class="sports-grid">
+        <div class="sport-card" onclick="openRegistration('Field Demo')">
+          <i class="fa-solid fa-flag-usa sport-icon"></i>
+          <h4>FIELD DEMO</h4>
+          <button class="event-reg-btn">REGISTER NOW</button>
+        </div>
+        <div class="sport-card" onclick="openRegistration('Track & Field')">
+          <i class="fa-solid fa-person-running sport-icon"></i>
+          <h4>TRACK & FIELD (MEN & WOMEN)</h4>
+          <button class="event-reg-btn">REGISTER NOW</button>
+        </div>
+        <div class="sport-card" onclick="openRegistration('Badminton')">
+          <i class="fa-solid fa-feather sport-icon"></i>
+          <h4>BADMINTON (MEN & WOMEN)</h4>
+          <button class="event-reg-btn">REGISTER NOW</button>
+        </div>
+        <div class="sport-card" onclick="openRegistration('Volleyball')">
+          <i class="fa-solid fa-volleyball sport-icon"></i>
+          <h4>VOLLEYBALL (MEN & WOMEN)</h4>
+          <button class="event-reg-btn">REGISTER NOW</button>
+        </div>
+        <div class="sport-card" onclick="openRegistration('Billiards')">
+          <i class="fa-solid fa-circle-dot sport-icon"></i>
+          <h4>BILLIARDS (MEN & WOMEN)</h4>
+          <button class="event-reg-btn">REGISTER NOW</button>
+        </div>
+        <div class="sport-card" onclick="openRegistration('Basketball')">
+          <i class="fa-solid fa-basketball sport-icon"></i>
+          <h4>BASKETBALL (MEN & WOMEN)</h4>
+          <button class="event-reg-btn">REGISTER NOW</button>
+        </div>
+        <div class="sport-card" onclick="openRegistration('Darts')">
+          <i class="fa-solid fa-bullseye sport-icon"></i>
+          <h4>DARTS (MEN & WOMEN)</h4>
+          <button class="event-reg-btn">REGISTER NOW</button>
+        </div>
+        <div class="sport-card" onclick="openRegistration('Sepak Takraw')">
+          <i class="fa-solid fa-futbol sport-icon"></i>
+          <h4>SEPAK TAKRAW</h4>
+          <button class="event-reg-btn">REGISTER NOW</button>
+        </div>
+        <div class="sport-card" onclick="openRegistration('Table Tennis')">
+          <i class="fa-solid fa-table-tennis-paddle-ball sport-icon"></i>
+          <h4>TABLE TENNIS (MEN & WOMEN)</h4>
+          <button class="event-reg-btn">REGISTER NOW</button>
+        </div>
+        <div class="sport-card" onclick="openRegistration('Chess')">
+          <i class="fa-solid fa-chess sport-icon"></i>
+          <h4>CHESS (MEN & WOMEN)</h4>
+          <button class="event-reg-btn">REGISTER NOW</button>
+        </div>
+        <div class="sport-card" onclick="openRegistration('Quiz Bee & Scrabble')">
+          <i class="fa-solid fa-brain sport-icon"></i>
+          <h4>QUIZ BEE & SCRABBLE</h4>
+          <button class="event-reg-btn">REGISTER NOW</button>
+        </div>
+        <div class="sport-card" onclick="openRegistration('Dance Sport & Vocal')">
+          <i class="fa-solid fa-icons sport-icon"></i>
+          <h4>DANCE SPORT & VOCAL</h4>
+          <button class="event-reg-btn">REGISTER NOW</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. REGISTRATION FORM SECTION -->
+    <section id="registrationSection" class="view-section">
+      <div class="form-card">
+        <div class="form-header-logos">
+          <div class="logo-box">
+            <img src="image/379918482_327557649781022_3615444280239187766_n.jpg" alt="Logo" class="changeable-logo-sm" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80'">
+            <span>BSIT</span>
+          </div>
+          <div class="logo-box text-accent">
+            <i id="sportHeaderIcon" class="fa-solid fa-trophy"></i>
+            <span id="selectedSportNameDisplay">SPORT</span>
+          </div>
+        </div>
+
+        <h2 class="form-title">TRY-OUT REGISTRATION FORM</h2>
+        <p class="form-subtitle">Fill in your information accurately to complete your try-out entry.</p>
+
+        <form id="tryoutForm" onsubmit="handleRegistrationSubmit(event)">
+          <div class="form-grid">
+            
+            <div class="form-group">
+              <label for="firstName">First Name *</label>
+              <input type="text" id="firstName" placeholder="e.g. Juan" required>
+            </div>
+
+            <div class="form-group">
+              <label for="lastName">Last Name *</label>
+              <input type="text" id="lastName" placeholder="e.g. Dela Cruz" required>
+            </div>
+
+            <div class="form-group">
+              <label for="middleName">Middle Name *</label>
+              <input type="text" id="middleName" placeholder="e.g. Santos" required>
+            </div>
+
+            <div class="form-group">
+              <label for="yrBlock">Year & Block *</label>
+              <select id="yrBlock" required>
+                <option value="">-- Select Year & Block --</option>
+                <option value="1A">1A</option><option value="1B">1B</option><option value="1C">1C</option><option value="1D">1D</option>
+                <option value="2A">2A</option><option value="2B">2B</option><option value="2C">2C</option><option value="2D">2D</option>
+                <option value="3A">3A</option><option value="3B">3B</option><option value="3C">3C</option><option value="3D">3D</option>
+                <option value="4A">4A</option><option value="4B">4B</option><option value="4C">4C</option><option value="4D">4D</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="birthDate">Birthdate *</label>
+              <input type="date" id="birthDate" required>
+            </div>
+
+            <div class="form-group">
+              <label for="age">Age *</label>
+              <input type="text" id="age" placeholder="e.g. 20" required>
+            </div>
+
+            <div class="form-group">
+              <label for="sex">Sex *</label>
+              <select id="sex" required>
+                <option value="">-- Select Sex --</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Intersex">Intersex</option>
+                <option value="Prefer not to say">Prefer not to say</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="contactNo">Contact No (Max 11 digits) *</label>
+              <input type="text" id="contactNo" placeholder="09123456789" maxlength="11" required>
+            </div>
+
+            <div class="form-group">
+              <label for="regEmail">Email Address (must contain @omg.com) *</label>
+              <input type="text" id="regEmail" placeholder="student@omg.com" required onblur="validateEmail(this)">
+            </div>
+
+            <div class="form-group">
+              <label for="regPassword">Password (Upper, Lower, Number & Special Char) *</label>
+              <div class="password-wrapper">
+                <input type="password" id="regPassword" placeholder="e.g. Pass123!" required onblur="validatePassword(this)">
+                <i class="fa-solid fa-eye toggle-password" onclick="togglePasswordVisibility('regPassword', this)"></i>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="form-actions">
+            <button type="button" class="btn-secondary" onclick="navigateTo('sportsSection')">CANCEL</button>
+            <button type="submit" class="btn-primary">SUBMIT REGISTRATION</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- 4. MESSENGER GROUP CHAT SECTION -->
+    <section id="chatSection" class="view-section">
+      <div class="chat-wrapper">
+        <div class="chat-sidebar">
+          <div class="chat-sidebar-header">
+            <i class="fa-solid fa-users"></i>
+            <h4>GROUP MEMBERS</h4>
+          </div>
+          <ul class="member-list" id="chatMemberList"></ul>
+        </div>
+
+        <div class="chat-area">
+          <div class="chat-header">
+            <div class="chat-header-info">
+              <i class="fa-solid fa-comments"></i>
+              <div>
+                <h3 id="chatTitleDisplay">FIELD DEMO GROUP CHAT</h3>
+                <span id="chatSubtextDisplay">Official Try-out & Team Communication Channel</span>
+              </div>
+            </div>
+            <button class="back-home-btn" onclick="navigateTo('homeSection')"><i class="fa-solid fa-house"></i> Home</button>
+          </div>
+
+          <div class="chat-messages" id="chatMessagesBox"></div>
+
+          <div class="chat-input-bar">
+            <input type="text" id="chatInput" placeholder="Type a message..." onkeypress="handleChatKeyPress(event)">
+            <button class="send-msg-btn" onclick="sendMessage()"><i class="fa-solid fa-paper-plane"></i></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4.5 STAFF CHAT VERSION -->
+    <section id="staffChatSection" class="view-section">
+      <div class="chat-wrapper">
+        <div class="chat-sidebar">
+          <div class="chat-sidebar-header">
+            <i class="fa-solid fa-shield-halved"></i>
+            <h4>ADMIN & FACILITATORS</h4>
+          </div>
+          <ul class="member-list" id="staffMemberList"></ul>
+        </div>
+        <div class="chat-area">
+          <div class="chat-header">
+            <div class="chat-header-info">
+              <i class="fa-solid fa-comments"></i>
+              <div>
+                <h3>STAFF COMMAND CHAT</h3>
+                <span>Exclusive Overall Admin & Facilitator Secure Channel</span>
+              </div>
+            </div>
+            <button class="back-home-btn" onclick="navigateTo('homeSection')"><i class="fa-solid fa-house"></i> Home</button>
+          </div>
+          <div class="chat-messages" id="staffChatMessagesBox"></div>
+          <div class="chat-input-bar">
+            <input type="text" id="staffChatInput" placeholder="Send secure staff message..." onkeypress="handleStaffChatKeyPress(event)">
+            <button class="send-msg-btn" onclick="sendStaffMessage()"><i class="fa-solid fa-paper-plane"></i></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. FACILITATOR DIRECTORY SECTION -->
+    <section id="facilitatorSection" class="view-section">
+      <div class="header-banner">
+        <div class="logo-box">
+          <img src="image/379918482_327557649781022_3615444280239187766_n.jpg" alt="Logo" class="changeable-logo-sm" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80'"> BSIT
+        </div>
+        <h2>SPORTS & EVENT FACILITATORS</h2>
+      </div>
+
+      <div class="facilitator-grid">
+        <div class="fac-card">
+          <img src="image/FB_IMG_1792398104851.jpg" alt="Facilitator">
+          <h4>JEWELLA VALERA</h4>
+          <span class="designation">FIELD DEMO</span>
+        </div>
+        <div class="fac-card">
+          <img src="image/FB_IMG_1792398123876.jpg" alt="Facilitator">
+          <h4>ASHLEY MELLA</h4>
+          <span class="designation">TRACK & FIELD (M & W)</span>
+        </div>
+        <div class="fac-card">
+          <img src="image/FB_IMG_1792398094588.jpg" alt="Facilitator">
+          <h4>NYLNIER LEU TAN</h4>
+          <span class="designation">BADMINTON (M & W)</span>
+        </div>
+        <div class="fac-card">
+          <img src="image/FB_IMG_1792398098506.jpg" alt="Facilitator">
+          <h4>JAYSON HARE</h4>
+          <span class="designation">VOLLEYBALL (M & W)</span>
+        </div>
+        <div class="fac-card">
+          <img src="image/FB_IMG_1792398108333.jpg" alt="Facilitator">
+          <h4>LINDSAY MALINIS</h4>
+          <span class="designation">BILLIARDS (M & W)</span>
+        </div>
+        <div class="fac-card">
+          <img src="image/FB_IMG_1792398111201.jpg" alt="Facilitator">
+          <h4>LESTER BALAGUER</h4>
+          <span class="designation">BASKETBALL (M & W)</span>
+        </div>
+        <div class="fac-card">
+          <img src="image/FB_IMG_1792398117882.jpg" alt="Facilitator">
+          <h4>RODENELLE HITOSIS</h4>
+          <span class="designation">DARTS (M & W)</span>
+        </div>
+        <div class="fac-card">
+          <img src="image/FB_IMG_1792398147374.jpg" alt="Facilitator">
+          <h4>CHARLENE GALLOSO</h4>
+          <span class="designation">SEPAK TAKRAW</span>
+        </div>
+        <div class="fac-card">
+          <img src="image/FB_IMG_1792398139538.jpg" alt="Facilitator">
+          <h4>WARREN JIONCO</h4>
+          <span class="designation">TABLE TENNIS (M & W)</span>
+        </div>
+        <div class="fac-card">
+          <img src="image/FB_IMG_1792398114413.jpg" alt="Facilitator">
+          <h4>EDZEL BALES</h4>
+          <span class="designation">CHESS (M & W)</span>
+        </div>
+        <div class="fac-card">
+          <img src="image/FB_IMG_1792398147374.jpg" alt="Facilitator">
+          <h4>MARY ALEXA BELASON</h4>
+          <span class="designation">QUIZ BEE & SCRABBLE</span>
+        </div>
+        <div class="fac-card">
+          <img src="image/FB_IMG_1792398143966.jpg" alt="Facilitator">
+          <h4>OLIVER MIGUEL GONZALES</h4>
+          <span class="designation">DANCE SPORT & VOCAL</span>
+        </div>
+      </div>
+
+      <div class="center-btn-wrapper">
+        <button class="back-home-btn-lg" onclick="navigateTo('homeSection')"><i class="fa-solid fa-arrow-left"></i> BACK TO HOME</button>
+      </div>
+    </section>
+
+    <!-- 6. ABOUT US SECTION -->
+    <section id="aboutSection" class="view-section">
+      <div class="header-banner">
+        <div class="logo-box">
+          <img src="image/379918482_327557649781022_3615444280239187766_n.jpg" alt="Logo" class="changeable-logo-sm" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80'"> BSIT
+        </div>
+        <h2>WHAT BSIT CYBERWARRIOR WEBSITE?</h2>
+      </div>
+
+      <div class="info-content-box">
+        <h3>OVERVIEW</h3>
+        <p>The Bachelor of Science in Information Technology (BSIT), the BSIT CYBERWARRIOR WEBSITE is a premier digital initiative designed to streamline, organize, and elevate student athletic participation across all academic year levels.</p>
+      </div>
+
+      <div class="center-btn-wrapper">
+        <button class="back-home-btn-lg" onclick="navigateTo('homeSection')"><i class="fa-solid fa-arrow-left"></i> BACK TO HOME</button>
+      </div>
+    </section>
+
+    <!-- 7. FAQ SECTION -->
+    <section id="faqSection" class="view-section">
+      <div class="header-banner">
+        <div class="logo-box">
+          <img src="image/379918482_327557649781022_3615444280239187766_n.jpg" alt="Logo" class="changeable-logo-sm" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80'"> BSIT
+        </div>
+        <h2>FREQUENTLY ASKED QUESTIONS (FAQ)</h2>
+      </div>
+
+      <div class="faq-container">
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-question">
+            <span>How do I register for a sports try-out?</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>Simply click on 'SPORTS & EVENT' in the navigation menu, choose your preferred sport or academic competition, fill out the required registration fields, and click Submit.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="center-btn-wrapper">
+        <button class="back-home-btn-lg" onclick="navigateTo('homeSection')"><i class="fa-solid fa-arrow-left"></i> BACK TO HOME</button>
+      </div>
+    </section>
+
+    <!-- 8. LOGIN SECTION -->
+    <section id="loginSection" class="view-section">
+      <div class="login-card">
+        <div class="login-header">
+          <div class="logo-box">
+            <img src="image/379918482_327557649781022_3615444280239187766_n.jpg" alt="Logo" class="changeable-logo-sm" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80'">
+            <span>BSIT</span>
+          </div>
+          <h3>ACCOUNT LOGIN</h3>
+          <p>Access Athlete Profile, Facilitator Dashboard, or Overall Admin Control Center</p>
+        </div>
+
+        <form id="loginForm" onsubmit="handleLoginSubmit(event)">
+          <div class="form-group">
+            <label for="loginUsername">Username / Email</label>
+            <input type="text" id="loginUsername" placeholder="Enter username or @omg.com email" required>
+          </div>
+
+          <div class="form-group">
+            <label for="loginPassword">Password</label>
+            <div class="password-wrapper">
+              <input type="password" id="loginPassword" placeholder="Enter password" required>
+              <i class="fa-solid fa-eye toggle-password" onclick="togglePasswordVisibility('loginPassword', this)"></i>
+            </div>
+          </div>
+
+          <div class="forgot-link" style="text-align: right; margin-bottom: 1rem;">
+            <a href="#" onclick="openForgotPasswordModal()" style="color: var(--primary-red); font-size: 0.85rem; font-weight: 600; text-decoration: none;">Forgot Password?</a>
+          </div>
+
+          <button type="submit" class="btn-primary btn-block">LOGIN</button>
+        </form>
+
+        <div class="login-footer">
+          <p>No account yet? <a href="#" onclick="navigateTo('sportsSection')">Register here</a></p>
+        </div>
+
+        <button class="back-home-btn" style="margin-top: 1.5rem; width: 100%;" onclick="navigateTo('homeSection')"><i class="fa-solid fa-arrow-left"></i> Back to Home</button>
+      </div>
+    </section>
+
+    <!-- 9. OVERALL ADMIN DASHBOARD SECTION -->
+    <section id="overallAdminDashboardSection" class="view-section">
+      <div class="dash-container">
+        <div class="dash-banner">
+          <div class="dash-title">
+            <i class="fa-solid fa-crown"></i>
+            <div>
+              <h2>OVERALL ADMIN CONTROL CENTER</h2>
+              <span>Generated Username: overall_admin | Password: AdminMaster#2026</span>
+            </div>
+          </div>
+          <div style="display: flex; gap: 1rem; align-items: center;">
+            <button class="back-home-btn" onclick="navigateTo('homeSection')"><i class="fa-solid fa-house"></i> Back to Home</button>
+            <button class="logout-dash-btn" onclick="logout()"><i class="fa-solid fa-right-from-bracket"></i> Logout</button>
+          </div>
+        </div>
+
+        <div class="dash-card">
+          <div class="dash-card-header">
+            <h3><i class="fa-solid fa-clipboard-list"></i> ALL PUBLISHED POSTS & ANNOUNCEMENTS MANAGEMENT</h3>
+            <button class="add-player-btn" onclick="openCreatePostModal()"><i class="fa-solid fa-plus"></i> Create Post</button>
+          </div>
+
+          <div class="table-responsive">
+            <table class="player-table">
+              <thead>
+                <tr>
+                  <th>Title</th>
+                  <th>Sports & Event Category</th>
+                  <th>Official Player</th>
+                  <th>Content</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="adminPostsTableBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10. FACILITATOR DASHBOARD SECTION -->
+    <section id="facilitatorDashboardSection" class="view-section">
+      <div class="dash-container">
+        <div class="dash-banner">
+          <div class="dash-title">
+            <i class="fa-solid fa-shield-halved"></i>
+            <div>
+              <h2 id="dashFacilitatorTitle">FACILITATOR CONTROL CENTER</h2>
+              <span id="dashFacilitatorSub">Restricted Access - Authorized Sports Facilitators Only</span>
+            </div>
+          </div>
+          <div style="display: flex; gap: 1rem; align-items: center;">
+            <button class="back-home-btn" onclick="navigateTo('homeSection')"><i class="fa-solid fa-house"></i> Back to Home</button>
+            <button class="logout-dash-btn" onclick="logout()"><i class="fa-solid fa-right-from-bracket"></i> Logout</button>
+          </div>
+        </div>
+
+        <div class="dash-grid">
+          <div class="dash-card">
+            <div class="dash-card-header">
+              <h3><i class="fa-solid fa-users-gear"></i> MANAGED PLAYER ROSTER</h3>
+              <button class="add-player-btn" onclick="openAddPlayerModal()"><i class="fa-solid fa-plus"></i> Add Player</button>
+            </div>
+
+            <div class="table-responsive">
+              <table class="player-table">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Yr & Block</th>
+                    <th>Age/Sex</th>
+                    <th>Contact</th>
+                    <th>Email</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="playerTableBody"></tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="dash-card">
+            <div class="dash-card-header">
+              <h3><i class="fa-solid fa-comments"></i> FACILITATOR MODERATED GROUP CHAT</h3>
+            </div>
+            
+            <div class="chat-wrapper" style="height: 480px; box-shadow: none;">
+              <div class="chat-area" style="border-radius: 8px;">
+                <div class="chat-messages" id="dashChatMessagesBox"></div>
+                <div class="chat-input-bar">
+                  <input type="text" id="dashChatInput" placeholder="Send announcement to team..." onkeypress="handleDashChatKeyPress(event)">
+                  <button class="send-msg-btn" onclick="sendDashMessage()"><i class="fa-solid fa-paper-plane"></i></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- MODAL 1: EDIT PROFILE MODAL -->
+  <div class="modal-overlay" id="profileModal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3><i class="fa-solid fa-user-pen"></i> ATHLETE PROFILE</h3>
+        <button class="close-modal-btn" onclick="closeProfileModal()">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="avatar-edit-box">
+          <img id="modalAvatarPreview" src="image/379918482_327557649781022_3615444280239187766_n.jpg" alt="Avatar" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80'">
+          <button class="change-avatar-btn" onclick="changeAvatar()"><i class="fa-solid fa-camera"></i> Change Avatar</button>
+        </div>
+
+        <form id="profileForm" onsubmit="saveProfile(event)">
+          <div class="form-group">
+            <label>First Name</label>
+            <input type="text" id="profFirstName" required>
+          </div>
+          <div class="form-group">
+            <label>Last Name</label>
+            <input type="text" id="profLastName" required>
+          </div>
+          <div class="form-group">
+            <label>Contact No</label>
+            <input type="text" id="profContact" required maxlength="11">
+          </div>
+          <div class="form-group">
+            <label>Registered Event</label>
+            <input type="text" id="profSport" readonly disabled>
+          </div>
+
+          <div class="modal-actions">
+            <button type="button" class="btn-secondary" onclick="logout()">LOGOUT</button>
+            <button type="submit" class="btn-primary">SAVE CHANGES</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL 2: ADD / EDIT PLAYER MODAL -->
+  <div class="modal-overlay" id="playerModal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 id="playerModalTitle"><i class="fa-solid fa-user-plus"></i> MANAGE PLAYER</h3>
+        <button class="close-modal-btn" onclick="closePlayerModal()">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form id="playerManageForm" onsubmit="handlePlayerModalSave(event)">
+          <input type="hidden" id="editPlayerIndex">
+          
+          <div class="form-group">
+            <label>First Name *</label>
+            <input type="text" id="mFirstName" required>
+          </div>
+          <div class="form-group">
+            <label>Last Name *</label>
+            <input type="text" id="mLastName" required>
+          </div>
+          <div class="form-group">
+            <label>Yr & Block *</label>
+            <select id="mYrBlock" required>
+              <option value="1A">1A</option><option value="1B">1B</option><option value="1C">1C</option><option value="1D">1D</option>
+              <option value="2A">2A</option><option value="2B">2B</option><option value="2C">2C</option><option value="2D">2D</option>
+              <option value="3A">3A</option><option value="3B">3B</option><option value="3C">3C</option><option value="3D">3D</option>
+              <option value="4A">4A</option><option value="4B">4B</option><option value="4C">4C</option><option value="4D">4D</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Age *</label>
+            <input type="number" id="mAge" required>
+          </div>
+          <div class="form-group">
+            <label>Sex *</label>
+            <select id="mSex" required>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+              <option value="Intersex">Intersex</option>
+              <option value="Prefer not to say">Prefer not to say</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Contact No *</label>
+            <input type="text" id="mContact" maxlength="11" required>
+          </div>
+          <div class="form-group">
+            <label>Status *</label>
+            <select id="mStatus" required>
+              <option value="Active">Active</option>
+              <option value="Qualified">Qualified</option>
+              <option value="Terminated">Terminated</option>
+            </select>
+          </div>
+
+          <div class="modal-actions">
+            <button type="button" class="btn-secondary" onclick="closePlayerModal()">CANCEL</button>
+            <button type="submit" class="btn-primary">SAVE PLAYER</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL 3: CREATE / EDIT POST MODAL -->
+  <div class="modal-overlay" id="postModal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 id="postModalTitle"><i class="fa-solid fa-bullhorn"></i> CREATE POST & ANNOUNCEMENT</h3>
+        <button class="close-modal-btn" onclick="closePostModal()">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form id="postManageForm" onsubmit="handlePostModalSave(event)">
+          <input type="hidden" id="editPostId">
+          
+          <div class="form-group">
+            <label>Post Title *</label>
+            <input type="text" id="postTitleInput" placeholder="e.g. Try-out Schedule Update" required>
+          </div>
+
+          <div class="form-group">
+            <label>Sports & Event Category *</label>
+            <select id="postSportCategory" required>
+              <option value="">-- Select Sports & Event Category --</option>
+              <option value="Field Demo">Field Demo</option>
+              <option value="Track & Field">Track & Field (Men & Women)</option>
+              <option value="Badminton">Badminton (Men & Women)</option>
+              <option value="Volleyball">Volleyball (Men & Women)</option>
+              <option value="Billiards">Billiards (Men & Women)</option>
+              <option value="Basketball">Basketball (Men & Women)</option>
+              <option value="Darts">Darts (Men & Women)</option>
+              <option value="Sepak Takraw">Sepak Takraw</option>
+              <option value="Table Tennis">Table Tennis (Men & Women)</option>
+              <option value="Chess">Chess (Men & Women)</option>
+              <option value="Quiz Bee & Scrabble">Quiz Bee & Scrabble</option>
+              <option value="Dance Sport & Vocal">Dance Sport & Vocal</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>Official Player / Honoree *</label>
+            <input type="text" id="postOfficialPlayer" placeholder="e.g. Juan Dela Cruz / All Team Members" required>
+          </div>
+
+          <div class="form-group">
+            <label>Announcement Content / Details *</label>
+            <textarea id="postContentInput" rows="4" placeholder="Enter announcement details..." required style="width:100%; padding:0.75rem; border:1px solid #E2E8F0; border-radius:8px; font-family:'Poppins',sans-serif;"></textarea>
+          </div>
+
+          <div class="modal-actions">
+            <button type="button" class="btn-secondary" onclick="closePostModal()">CANCEL</button>
+            <button type="submit" class="btn-primary">PUBLISH POST</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL 4: FORGOT PASSWORD -->
+  <div class="modal-overlay" id="forgotPasswordModal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3><i class="fa-solid fa-key"></i> RESET PASSWORD</h3>
+        <button class="close-modal-btn" onclick="closeForgotPasswordModal()">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.2rem;">
+          Enter your registered Email address (@omg.com) or Username to receive your recovery instructions or temporary credentials.
+        </p>
+        <form id="forgotPasswordForm" onsubmit="handleForgotPasswordSubmit(event)">
+          <div class="form-group">
+            <label>Username or Email *</label>
+            <input type="text" id="recoveryEmailInput" placeholder="Enter your email or username" required>
+          </div>
+          <div class="modal-actions">
+            <button type="button" class="btn-secondary" onclick="closeForgotPasswordModal()">CANCEL</button>
+            <button type="submit" class="btn-primary">SEND RESET LINK</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
